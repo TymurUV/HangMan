@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean playAgain = true;
         while (playAgain) {
-            String wordToGuess = storage.getRandomWord();
+            String wordToGuess = storage.getRandomWord().toLowerCase();
             int attempts = 6;
             StringBuilder guessedLetters = new StringBuilder();
             for (int i = 0; i < wordToGuess.length(); i++) {
@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("Word: " + guessedLetters);
                 System.out.println("Attempts Left :" + attempts);
                 System.out.println("Guess a letter :");
-                char guess = scanner.next().charAt(0);
+                char guess = scanner.next().toLowerCase().charAt(0);
                 if (wordToGuess.contains(String.valueOf(guess))) {
                     for (int i = 0; i < wordToGuess.length(); i++) {
                         if (wordToGuess.charAt(i) == guess) {
